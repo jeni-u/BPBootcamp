@@ -1,0 +1,9 @@
+select * from users_schema.users;
+INSERT into users_schema.users (first_name, last_name, email) values ('Leo','Messi', 'leo@gmail.com');
+select * from users_schema.users;
+select email from users_schema.users where id = '1';
+select * from users_schema.users where id > '3';
+update users_schema.users set last_name = 'pancakes' where id = '4';
+delete from users where id = '3';
+select first_name from users;
+select * from users order by first_name desc
