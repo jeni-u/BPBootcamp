@@ -1,0 +1,21 @@
+select * from dojos;
+insert into dojos (name) value ("DOJO_1");
+insert into dojos (name) value ("DOJO_2");
+insert into dojos (name) value ("DOJO_3");
+delete FROM dojos WHERE name = "DOJO_1";
+delete FROM dojos WHERE name = "DOJO_2";
+delete FROM dojos WHERE name = "DOJO_3";
+insert into ninjas (first_name, last_name, age, dojo_id) VALUES ('Jon','Jones', '40', 4);
+insert into ninjas (first_name, last_name, age, dojo_id) VALUES ('Naruto','Uzumaki', '20', 4);
+insert into ninjas (first_name, last_name, age, dojo_id) VALUES ('Sasuke','Uchiha', '20', 4);
+insert into ninjas (first_name, last_name, age, dojo_id) VALUES ('Leo','Messi', '38', 5);
+insert into ninjas (first_name, last_name, age, dojo_id) VALUES ('Itachi','Uchiha', '28', 5);
+insert into ninjas (first_name, last_name, age, dojo_id) VALUES ('Marco','Reus', '34', 5);
+insert into ninjas (first_name, last_name, age, dojo_id) VALUES ('Israel','Adesanya', '28', 6);
+insert into ninjas (first_name, last_name, age, dojo_id) VALUES ('Rock','Lee', '20', 6);
+insert into ninjas (first_name, last_name, age, dojo_id) VALUES ('Might','Guy', '40', 6);
+select ninjas.first_name, ninjas.last_name, ninjas.age from ninjas where dojo_id = '4';
+select ninjas.first_name, ninjas.last_name, ninjas.age from ninjas where dojo_id = '6';
+select dojo_id from ninjas where first_name = 'Might';
+select * from ninjas join dojos on ninjas.dojo_id = dojos.id where ninjas.id = '6';
+select * from ninjas join dojos on ninjas.dojo_id = dojos.id
