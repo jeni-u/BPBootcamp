@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box1,.box2{
+        width: 80px;
+        height: 80px;
+    }
+    .box1{
+        background-color: red;
+    }
+    .box2{
+        background-color: black;
+    }
+    .container{
+        display: flex;
+        justify-content: center;
+    }
+</style>
+<body>
+    {% for row in range(num) %}
+    <div class="container">
+        {% for col in range(8) %}
+        {% if row % 2 == 0 %}
+        {% if col % 2 == 0 %}
+        <div class="box1"></div>
+        {% else%}
+        <div class="box2"></div>
+        {% endif %}
+        {% else %}
+        {% if col % 2 == 0 %}
+        <div class="box2"></div>
+        {% else%}
+        <div class="box1"></div>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+    </div>
+    {% endfor %}
+</body>
+
+</html>
