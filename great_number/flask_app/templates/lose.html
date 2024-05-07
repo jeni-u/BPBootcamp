@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .box{
+        width: 150px;
+        height: 150px;
+        background-color: green;
+        color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+<body>
+    <div class="container">
+    <h1>You Lose</h1>
+    <form action="/clear">
+        <input type="submit" name=submit_2 id=submit2 value="Play Again">
+    </form>
+    </div>
+</body>
+</html>

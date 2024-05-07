@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .box{
+        width: 150px;
+        height: 150px;
+        background-color: green;
+        color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+<body>
+    <div class="container">
+    <h2>Welcome to the Great Number Game</h2>
+    <p>I am thinking of a number between 1 and 100. Try to guess it:</p>
+    <div class="box">
+        <p>{{ the_number }} was the number</p>
+        
+    </div>
+    {% if session['attempts'] == 1 %}
+    <p>You guessed the number in the first attempt.</p>
+    {% else %}
+    <p>You guessed the number in {{session['attempts']}} attempts.</p>
+    {% endif %}
+    <form action="/leaderboard" method="post">
+        <p>Please write your name :</p>
+        <input type="text" name="player_name" id="player_name">
+        <input type="submit" name="submit3" id="submit3">
+    </form>
+    <p>Do you want to:</p>
+    <form action="/clear">
+        <input type="submit" name=submit_2 id=submit2 value="Play Again">
+    </form>
+    </div>
+</body>
+</html>
