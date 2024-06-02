@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Recipe</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <form action="/update/recipe/{{recipe.id}}" method="POST">
+        <div class="form-group">
+          <label for="name">Recipe Name: </label>
+          <input type="text" name="name" id="name" placeholder="Enter name" class="form-control">
+        </div>
+        {% with messages = get_flashed_messages(category_filter=["name"]) %}
+        {% if messages %}
+            
+            {% for message in messages %}
+            <p class="text-danger text-center">{{ message }}</p>
+            {% endfor %}
+            
+        {% endif %}
+        {% endwith %}
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea name="description" id="description" class="form-control"></textarea>
+        </div>
+        {% with messages = get_flashed_messages(category_filter=["recipeDes"]) %}
+        {% if messages %}
+            
+            {% for message in messages %}
+            <p class="text-danger text-center">{{ message }}</p>
+            {% endfor %}
+            
+        {% endif %}
+        {% endwith %}
+        <div class="form-group">
+          <label for="instructions">Instructions</label>
+          <textarea name="instructions" id="instructions" class="form-control"></textarea>
+        </div>
+        {% with messages = get_flashed_messages(category_filter=["recipeIns"]) %}
+        {% if messages %}
+            
+            {% for message in messages %}
+            <p class="text-danger text-center">{{ message }}</p>
+            {% endfor %}
+            
+        {% endif %}
+        {% endwith %}
+        <div class="form-group">
+          <label for="date">Date it was made: </label>
+          <input type="date" name="date" id="date" class="form-control">
+        </div>
+        {% with messages = get_flashed_messages(category_filter=["recipeDate"]) %}
+        {% if messages %}
+            
+            {% for message in messages %}
+            <p class="text-danger text-center">{{ message }}</p>
+            {% endfor %}
+            
+        {% endif %}
+        {% endwith %}
+        <div class="form-group">
+          <p>Was it made under 30 mins?</p>
+          <input type="radio" name="time_takes" id="yes" value="Yes">
+          <label for="yes">Yes</label>
+          <input type="radio" name="time_takes" id="no" value="No">
+          <label for="no">No</label>
+        </div>
+        {% with messages = get_flashed_messages(category_filter=["recipeTime"]) %}
+        {% if messages %}
+            
+            {% for message in messages %}
+            <p class="text-danger text-center">{{ message }}</p>
+            {% endfor %}
+            
+        {% endif %}
+        {% endwith %}
+        <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-primary">
+    </form>
+</body>
+</html>
